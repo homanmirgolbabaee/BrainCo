@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --input-text-color: 33, 37, 41; /* Dark color for text input */
+  --input-background-color: 255, 255, 255; /* Light color for input background */
+  --input-placeholder-color: 108, 117, 125; /* Lighter color for placeholder */
+  --card-background: 255, 255, 255; /* Background color for card */
+  --card-foreground: 0, 0, 0; /* Text color for card */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 25, 25, 25;
+    --background-end-rgb: 35, 35, 35;
+    --input-text-color: 255, 255, 255; /* Light color for text input in dark mode */
+    --input-background-color: 45, 45, 45; /* Darker color for input background in dark mode */
+    --input-placeholder-color: 150, 150, 150; /* Grey color for placeholder in dark mode */
+    --card-background: 35, 35, 35; /* Dark background color for card in dark mode */
+    --card-foreground: 255, 255, 255; /* White text color for card in dark mode */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  ) rgb(var(--background-start-rgb));
+}
+
+/* Style for input fields */
+input {
+  color: rgb(var(--input-text-color));
+  background-color: rgb(var(--input-background-color));
+  border: 1px solid #ced4da;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  width: 100%; /* Full width */
+  height: 2.5rem; /* Standard height */
+}
+
+input::placeholder {
+  color: rgb(var(--input-placeholder-color));
+}
+
+/* Adjustments to button styles for better UX */
+button, .button {
+  background-color: #007bff; /* Blue color for buttons */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  display: inline-flex; /* Flex display */
+  align-items: center; /* Vertical center */
+  justify-content: center; /* Horizontal center */
+  width: 100%; /* Full width */
+  height: 2.5rem; /* Standard height */
+}
+
+button:hover, .button:hover {
+  background-color: #6800b3; /* Darker blue on hover */
+}
+
+/* Styles for the card component */
+.bg-card {
+  background-color: rgb(var(--card-background));
+}
+
+.text-card-foreground {
+  color: rgb(var(--card-foreground));
+}
+
+/* Additional styles for specific classes used in your HTML content */
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
